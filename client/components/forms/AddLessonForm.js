@@ -12,17 +12,20 @@ const AddLessonForm = ({
   handleVideoRemove,
 }) => {
   return (
-    <div className="container pt-3">
+    <div className="">
       <form onSubmit={handleAddLesson}>
+        <label htmlFor="">Chapter Name</label>
+
         <input
           type="text"
           className="form-control square"
           onChange={(e) => setValues({ ...values, title: e.target.value })}
           values={values.title}
-          placeholder="Title"
+          placeholder="Chapter Name"
           autoFocus
           required
         />
+        <label htmlFor="">Chapter Description</label>
 
         <textarea
           className="form-control mt-3"
@@ -30,11 +33,13 @@ const AddLessonForm = ({
           rows="7"
           onChange={(e) => setValues({ ...values, content: e.target.value })}
           values={values.content}
-          placeholder="Content"
+          placeholder="Chapter Description"
         ></textarea>
-
+        <label htmlFor="" className="mt-3">
+          Chapter Cover
+        </label>
         <div className="d-flex justify-content-center">
-          <label className="btn btn-dark btn-block text-left mt-3">
+          <label className="btn btn-dark btn-block text-left mt-1">
             {uploadButtonText}
             <input onChange={handleVideo} type="file" accept="video/*" hidden />
           </label>
@@ -62,9 +67,9 @@ const AddLessonForm = ({
           size="large"
           type="primary"
           loading={uploading}
-          shape="round"
+          block
         >
-          Save
+          Create Chapter
         </Button>
       </form>
     </div>

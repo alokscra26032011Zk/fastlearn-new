@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Menu } from "antd";
+import { Col, Image, Menu, Row } from "antd";
 import Link from "next/link";
 import {
   AppstoreOutlined,
@@ -7,8 +7,6 @@ import {
   LoginOutlined,
   LogoutOutlined,
   UserAddOutlined,
-  CarryOutOutlined,
-  TeamOutlined,
 } from "@ant-design/icons";
 import { Context } from "../context";
 import axios from "axios";
@@ -38,102 +36,94 @@ const TopNav = () => {
   };
 
   return (
-    <Menu mode="horizontal" selectedKeys={[current]} className="mb-2">
-      <Item
-        key="/"
-        onClick={(e) => setCurrent(e.key)}
-        icon={<AppstoreOutlined />}
-      >
+    <Row justify="space-between" align="middle" className="TopNav">
+      <Col span="2">
         <Link href="/">
-          <a>App</a>
+          <Image
+            className="logo ml-3 p-2 pointer"
+            preview={false}
+            width={200}
+            src="https://cdn.discordapp.com/attachments/820608670810243133/903002139293523968/unknown.png"
+          />
         </Link>
-      </Item>
-
-      {user && user.role && user.role.includes("Instructor") ? (
-        <Item
-          key="/instructor/course/create"
-          onClick={(e) => setCurrent(e.key)}
-          icon={<CarryOutOutlined />}
-        >
-          <Link href="/instructor/course/create">
-            <a>Create Course</a>
-          </Link>
-        </Item>
-      ) : (
-        // <Item
-        //   key="/user/become-instructor"
-        //   onClick={(e) => setCurrent(e.key)}
-        //   icon={<TeamOutlined />}
-        // >
-        //   <Link href="/user/become-instructor">
-        //     <a>Become Instructor</a>
-        //   </Link>
-        // </Item>
-        <Item
-          key="/iota"
-          onClick={(e) => setCurrent(e.key)}
-          icon={<CoffeeOutlined />}
-        >
-          <Link href="/iota">
-            <a>Iota</a>
-          </Link>
-        </Item>
-      )}
-
-      {user === null && (
-        <>
-          <Item
-            key="/login"
-            onClick={(e) => setCurrent(e.key)}
-            icon={<LoginOutlined />}
-          >
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          </Item>
-
-          <Item
-            key="/register"
-            onClick={(e) => setCurrent(e.key)}
-            icon={<UserAddOutlined />}
-          >
-            <Link href="/register">
-              <a>Register</a>
-            </Link>
-          </Item>
-        </>
-      )}
-
-      {user !== null && (
-        <SubMenu
-          icon={<CoffeeOutlined />}
-          title={user && user.name}
-          className="float-right"
-        >
-          <ItemGroup>
-            <Item key="/user">
-              <Link href="/user">
-                <a>Dashboard</a>
+      </Col>
+      <Col span="8">
+        {user !== null && (
+          <Menu mode="horizontal" selectedKeys={[current]}>
+            <Item
+              key="/"
+              onClick={(e) => setCurrent(e.key)}
+              icon={<AppstoreOutlined />}
+            >
+              <Link href="/">
+                <a>Overview</a>
               </Link>
             </Item>
-            <Item onClick={logout}>Logout</Item>
-          </ItemGroup>
-        </SubMenu>
-      )}
+            <Item
+              key="/courses"
+              onClick={(e) => setCurrent(e.key)}
+              icon={<UserAddOutlined />}
+            >
+              <Link href="/courses">
+                <a>Courses</a>
+              </Link>
+            </Item>
+            <Item
+              key="/assignments"
+              onClick={(e) => setCurrent(e.key)}
+              icon={<UserAddOutlined />}
+            >
+              <Link href="/assignments">
+                <a>Assignments</a>
+              </Link>
+            </Item>
+          </Menu>
+        )}
+      </Col>{" "}
+      <Menu mode="horizontal" selectedKeys={[current]}>
+        {user === null && (
+          <>
+            <Item
+              key="/login"
+              onClick={(e) => setCurrent(e.key)}
+              icon={<LoginOutlined />}
+            >
+              <Link href="/login">
+                <a>Login</a>
+              </Link>
+            </Item>
 
-      {user && user.role && user.role.includes("Instructor") && (
-        <Item
-          key="/instructor"
-          onClick={(e) => setCurrent(e.key)}
-          icon={<TeamOutlined />}
-          className="float-right"
-        >
-          <Link href="/instructor">
-            <a>Instructor</a>
-          </Link>
-        </Item>
-      )}
-    </Menu>
+            <Item
+              key="/register"
+              onClick={(e) => setCurrent(e.key)}
+              icon={<UserAddOutlined />}
+            >
+              <Link href="/register">
+                <a>Register</a>
+              </Link>
+            </Item>
+          </>
+        )}
+        {user !== null && (
+          <>
+            <SubMenu
+              icon={<CoffeeOutlined />}
+              title={user && user.name}
+              className="float-right"
+            >
+              <ItemGroup>
+                <Item key="/user">
+                  <Link href="/user">
+                    <a>Dashboard</a>
+                  </Link>
+                </Item>
+                <Item onClick={logout}>Logout</Item>
+              </ItemGroup>
+            </SubMenu>
+          </>
+        )}
+      </Menu>
+    </Row>
   );
 };
 

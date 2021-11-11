@@ -11,6 +11,7 @@ const Register = () => {
   const [name, setName] = useState("Alok");
   const [email, setEmail] = useState("alok.node@gmail.com");
   const [password, setPassword] = useState("rrrrrr");
+  const [role, setRole] = useState("Instructor");
   const [loading, setLoading] = useState(false);
 
   const {
@@ -33,6 +34,7 @@ const Register = () => {
         name,
         email,
         password,
+        role,
       });
       // console.log("REGISTER RESPONSE", data);
       toast("Registration successful. Please login.");
@@ -48,57 +50,61 @@ const Register = () => {
 
   return (
     <>
-    <Row justify="center" align="middle" className="singleForm">
+      <Row justify="center" align="middle" className="singleForm">
         <Col span="7">
-        <Tabs defaultActiveKey="1" type="card" size="large" className="mb-4" centered>
-          <TabPane tab="Student Signup" key="1">
-          </TabPane>
-          <TabPane tab="Tutor Signup" key="2">
-          </TabPane>
-        </Tabs>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="form-control mb-4 p-4"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter name"
-            required
-          />
-
-          <input
-            type="email"
-            className="form-control mb-4 p-4"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email"
-            required
-          />
-
-          <input
-            type="password"
-            className="form-control mb-4 p-4"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter password"
-            required
-          />
-
-          <button
-            type="submit"
-            className="btn btnGrad btn-block btn-primary"
-            disabled={!name || !email || !password || loading}
+          <Tabs
+            defaultActiveKey="1"
+            type="card"
+            size="large"
+            className="mb-4"
+            centered
           >
-            {loading ? <SyncOutlined spin /> : "Submit"}
-          </button>
-        </form>
+            <TabPane tab="Student Signup" key="1"></TabPane>
+            <TabPane tab="Tutor Signup" key="2"></TabPane>
+          </Tabs>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="form-control mb-4 p-4"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter name"
+              required
+            />
 
-        <p className="text-center p-3">
-          Already registered?{" "}
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-        </p>
+            <input
+              type="email"
+              className="form-control mb-4 p-4"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter email"
+              required
+            />
+
+            <input
+              type="password"
+              className="form-control mb-4 p-4"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+              required
+            />
+
+            <button
+              type="submit"
+              className="btn btnGrad btn-block btn-primary"
+              disabled={!name || !email || !password || loading}
+            >
+              {loading ? <SyncOutlined spin /> : "Submit"}
+            </button>
+          </form>
+
+          <p className="text-center p-3">
+            Already registered?{" "}
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </p>
         </Col>
       </Row>
     </>

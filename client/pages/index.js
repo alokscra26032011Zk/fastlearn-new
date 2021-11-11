@@ -2,18 +2,17 @@ import { withRouter } from "next/router";
 import axios from "axios";
 import CourseCard from "../components/cards/CourseCard";
 import Head from "next/head";
+import TutorAtnBtn from "../components/Tutor/TutorAtnBtn";
+import TutorCta from "../components/Tutor/TutorCta";
+import styles from "../styles/Overview.module.css";
+import { Col, Row, Space, Table } from "antd";
+import { columns, data } from "../context/dummy";
 
 const Index = ({ courses, router }) => {
   const head = () => (
     <Head>
-      <title>
-   Fastlearn |{" "}
-        {process.env.APP_NAME}
-      </title>
-      <meta
-        name="description"
-        content="Fastlearn"
-      />
+      <title>Fastlearn | {process.env.APP_NAME}</title>
+      <meta name="description" content="Fastlearn" />
       <link rel="canonical" href={`${process.env.DOMAIN}${router.pathname}`} />
       <meta
         property="og:title"
@@ -39,12 +38,28 @@ const Index = ({ courses, router }) => {
   return (
     <>
       {head()}
+      <div className="container">
+        <div className={styles.overviewPage}>
+          <TutorAtnBtn></TutorAtnBtn>
+          <TutorCta></TutorCta>
+          <Row gutter={12} className="mt-4">
+            <Col span={8}>
+              {" "}
+              <h3 className="mb-4">Sample Table</h3>
+              <Table columns={columns} dataSource={data} />
+            </Col>
+            <Col span={16}>
+              {" "}
+              <h3 className="mb-4">Sample Table</h3>
+              <Table columns={columns} dataSource={data} />
+            </Col>
+          </Row>
+        </div>
+      </div>
       <div className="jumbotron text-center bg-primary square">
         <h1>FastLearn</h1>
         <hr style={{ borderBottom: "2px solid silver", width: "100px" }} />
-        <p className="lead">
-          Courses
-        </p>
+        <p className="lead">Courses</p>
       </div>
       <div className="container-fluid">
         <div className="row pt-2">

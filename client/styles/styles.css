@@ -25,10 +25,10 @@ h5 {
   cursor: pointer;
 }
 
-.jumbotron {
+/* .jumbotron {
   background-image: linear-gradient(to right, #007bff, #000);
   color: #fff;
-}
+} */
 
 .logo {
   display: inline !important;
@@ -45,6 +45,7 @@ h5 {
   color: #fff;
   padding: 0rem 2rem;
   transition: 2s;
+  height: 4rem !important;
 }
 
 .btnGrad:hover {
@@ -57,7 +58,12 @@ h5 {
 
 select,
 input[type="file"] {
-  height: 3.1rem !important;
+  height: 4rem !important;
+}
+
+input[type="text"] {
+  margin-bottom: 1.5rem !important;
+  padding: 1.5rem !important;
 }
 
 .singleForm h1 {

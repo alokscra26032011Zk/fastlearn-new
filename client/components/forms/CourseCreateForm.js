@@ -22,6 +22,7 @@ const CourseCreateForm = ({
       {values && (
         <form onSubmit={handleSubmit}>
           <div className="form-group">
+            <label htmlFor="">Course Name</label>
             <input
               type="text"
               name="name"
@@ -33,6 +34,8 @@ const CourseCreateForm = ({
           </div>
 
           <div className="form-group">
+            <label htmlFor="">Course Description</label>
+
             <textarea
               name="description"
               cols="7"
@@ -46,6 +49,8 @@ const CourseCreateForm = ({
           <div className="form-row">
             <div className="col">
               <div className="form-group">
+                <label htmlFor="">Course Type</label>
+
                 <Select
                   style={{ width: "100%" }}
                   size="large"
@@ -57,9 +62,9 @@ const CourseCreateForm = ({
                 </Select>
               </div>
             </div>
-
+            <label htmlFor=""></label>
             {values.paid && (
-              <div className="form-group">
+              <div className="form-group mt-4">
                 <Select
                   defaultValue="$9.99"
                   style={{ widht: "100%" }}
@@ -74,6 +79,8 @@ const CourseCreateForm = ({
           </div>
 
           <div className="form-group">
+            <label htmlFor="">Course Category</label>
+
             <input
               type="text"
               name="category"
@@ -84,10 +91,11 @@ const CourseCreateForm = ({
             />
           </div>
 
+          <label htmlFor="">Course Cover</label>
           <div className="form-row">
             <div className="col">
               <div className="form-group">
-                <label className="btn btn-outline-secondary btn-block text-left">
+                <label className="btn btn-outline-secondary py-3 btn-block text-left">
                   {uploadButtonText}
                   <input
                     type="file"
@@ -116,13 +124,13 @@ const CourseCreateForm = ({
               <Button
                 onClick={handleSubmit}
                 disabled={values.loading || values.uploading}
-                className="btn btn-primary"
+                className="btn btn-primary btnGrad py-3 my-3"
                 loading={values.loading}
                 type="primary"
                 size="large"
-                shape="round"
+                block
               >
-                {values.loading ? "Saving..." : "Save & Continue"}
+                {values.loading ? "Saving..." : "Create Course & Continue"}
               </Button>
             </div>
           </div>

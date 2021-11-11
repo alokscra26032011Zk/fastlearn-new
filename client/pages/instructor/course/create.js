@@ -6,6 +6,7 @@ import Resizer from "react-image-file-resizer";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import user from "../../../../server/models/user";
+import { Col, Row } from "antd";
 
 const CourseCreate = () => {
   // state
@@ -85,22 +86,23 @@ const CourseCreate = () => {
 
   return (
     <InstructorRoute>
-      <h1 className="jumbotron text-center square">Create Course</h1>
-      <div className="pt-3 pb-3">
-        <CourseCreateForm
-          handleSubmit={handleSubmit}
-          handleImage={handleImage}
-          handleChange={handleChange}
-          values={values}
-          setValues={setValues}
-          preview={preview}
-          uploadButtonText={uploadButtonText}
-          handleImageRemove={handleImageRemove}
-        />
-      </div>
-      <pre>{JSON.stringify(values, null, 4)}</pre>
-      <hr />
-      <pre>{JSON.stringify(image, null, 4)}</pre>
+      <Row justify="center" align="middle" className="singleForm">
+        <Col span="10">
+          <h1>Course creation form</h1>{" "}
+          <div className="pt-3 pb-3">
+            <CourseCreateForm
+              handleSubmit={handleSubmit}
+              handleImage={handleImage}
+              handleChange={handleChange}
+              values={values}
+              setValues={setValues}
+              preview={preview}
+              uploadButtonText={uploadButtonText}
+              handleImageRemove={handleImageRemove}
+            />
+          </div>
+        </Col>
+      </Row>
     </InstructorRoute>
   );
 };

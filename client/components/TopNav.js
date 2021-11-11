@@ -50,7 +50,7 @@ const TopNav = () => {
       <Col span="8">
         {user !== null && (
           <Menu mode="horizontal" selectedKeys={[current]}>
-            <Item
+            {/* <Item
               key="/"
               onClick={(e) => setCurrent(e.key)}
               icon={<AppstoreOutlined />}
@@ -76,7 +76,7 @@ const TopNav = () => {
               <Link href="/assignments">
                 <a>Assignments</a>
               </Link>
-            </Item>
+            </Item> */}
           </Menu>
         )}
       </Col>{" "}

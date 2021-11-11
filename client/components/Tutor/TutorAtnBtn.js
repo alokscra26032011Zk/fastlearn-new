@@ -6,10 +6,10 @@ function TutorAtnBtn() {
   return (
     <Row justify="end">
       <Space>
-        <Button href="/assignments/create" type="primary">
+        {/* <Button href="/assignments/create" type="primary">
           Add Test Series
-        </Button>{" "}
-        <Button href="/courses/create" type="primary">
+        </Button>{" "} */}
+        <Button href="/instructor/course/create" type="primary">
           Create Course
         </Button>{" "}
       </Space>

@@ -11,6 +11,7 @@ import {
 import AddLessonForm from "../forms/AddLessonForm";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 function CourseDetailAtnBtn({ course, students, setCourse }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -23,6 +24,9 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
     content: "",
     video: {},
   });
+
+  const router = useRouter();
+
   const [markdownCheetsheetModal, setMarkdownCheetsheetModal] = useState(false);
   const showModal = () => {
     setIsModalVisible(true);
@@ -164,7 +168,9 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
           {/* edit icon */}
           <Tooltip title="Edit">
             <EditOutlined
-              onClick={() => router.push(`/instructor/course/edit/${slug}`)}
+              onClick={() =>
+                router.push(`/instructor/course/edit/${course.slug}`)
+              }
               className="h5 pointer text-warning mr-4"
             />
           </Tooltip>

@@ -15,7 +15,7 @@ const UpdateLessonForm = ({
   setMarkdownCheetsheetModal = (f) => f,
 }) => {
   return (
-    <div className="container">
+    <div className="">
       <form onSubmit={handleUpdateLesson}>
         <input
           type="text"

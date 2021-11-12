@@ -13,10 +13,10 @@ function ListCard({ course }) {
         <Space direction="vertical">
           <div className="media-body pl-2">
             <div className="row">
-              <Avatar
+              {/* <Avatar
                 size={80}
                 src={course.image ? course.image.Location : "/course.png"}
-              />
+              /> */}
               <div className="col">
                 <Badge count={course.paid ? course.price : "Free"}>
                   <Link
@@ -37,7 +37,7 @@ function ListCard({ course }) {
                     style={{ marginTop: "-15px", fontSize: "10px" }}
                     className="text-danger"
                   >
-                    At least 5 lessons are required to publish a course
+                    5 lessons are required to publish
                   </p>
                 ) : course.published ? (
                   <p

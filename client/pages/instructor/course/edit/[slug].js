@@ -37,9 +37,8 @@ const CourseEdit = () => {
    */
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState({});
-  const [uploadVideoButtonText, setUploadVideoButtonText] = useState(
-    "Upload video"
-  );
+  const [uploadVideoButtonText, setUploadVideoButtonText] =
+    useState("Upload video");
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   // markdown cheetsheet modal
@@ -253,7 +252,7 @@ const CourseEdit = () => {
 
   return (
     <InstructorRoute>
-      <h1 className="jumbotron text-center square p-3 mt-2 left-bottom-radius">
+      <h1 className=" text-center square p-3 mt-2 left-bottom-radius">
         Update Course
       </h1>
 
@@ -285,6 +284,7 @@ const CourseEdit = () => {
           <List
             onDragOver={(e) => e.preventDefault()}
             itemLayout="horizontal"
+            className="lessons"
             dataSource={values && values.lessons}
             renderItem={(item, index) => (
               <Item

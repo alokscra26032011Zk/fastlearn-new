@@ -113,3 +113,8 @@ svg {
 .markedlater:hover {
   background-color: #f5ff9e !important;
 }
+
+.lessons {
+  cursor: grab !important;
+  text-decoration: underline;
+}

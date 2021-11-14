@@ -7,7 +7,8 @@ import { requireSignin } from "../middlewares";
 
 // controllers
 import {
-  register,
+  registerStudent,
+  registerInstructor,
   login,
   logout,
   currentUser,
@@ -15,7 +16,8 @@ import {
   resetPassword,
 } from "../controllers/auth";
 
-router.post("/register", register);
+router.post("/register-student", registerStudent);
+router.post("/register-instructor", registerInstructor);
 router.post("/login", login);
 router.get("/logout", logout);
 router.get("/current-user", requireSignin, currentUser);

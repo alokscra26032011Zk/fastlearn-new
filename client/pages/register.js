@@ -24,12 +24,33 @@ const Register = () => {
   }, [user]);
 
   const { TabPane } = Tabs;
-  const handleSubmit = async (e) => {
+  const handleSubmitInstructor = async (e) => {
     e.preventDefault();
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/register`, {
+      const { data } = await axios.post(`/api/register-instructor`, {
+        name,
+        email,
+        password,
+      });
+      // console.log("REGISTER RESPONSE", data);
+      toast("Registration successful. Please login.");
+      setName("");
+      setEmail("");
+      setPassword("");
+      setLoading(false);
+    } catch (err) {
+      toast(err.response.data);
+      setLoading(false);
+    }
+  };
+  const handleSubmitStudent = async (e) => {
+    e.preventDefault();
+    // console.table({ name, email, password });
+    try {
+      setLoading(true);
+      const { data } = await axios.post(`/api/register-student`, {
         name,
         email,
         password,
@@ -52,11 +73,7 @@ const Register = () => {
         <Col span="7">
         <Tabs defaultActiveKey="1" type="card" size="large" className="mb-4" centered>
           <TabPane tab="Student Signup" key="1">
-          </TabPane>
-          <TabPane tab="Tutor Signup" key="2">
-          </TabPane>
-        </Tabs>
-        <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmitStudent}>
           <input
             type="text"
             className="form-control mb-4 p-4"
@@ -92,6 +109,47 @@ const Register = () => {
             {loading ? <SyncOutlined spin /> : "Submit"}
           </button>
         </form>
+          </TabPane>
+          <TabPane tab="Instructor Signup" key="2">
+          <form onSubmit={handleSubmitInstructor}>
+          <input
+            type="text"
+            className="form-control mb-4 p-4"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter name"
+            required
+          />
+
+          <input
+            type="email"
+            className="form-control mb-4 p-4"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter email"
+            required
+          />
+
+          <input
+            type="password"
+            className="form-control mb-4 p-4"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+            required
+          />
+
+          <button
+            type="submit"
+            className="btn btnGrad btn-block btn-primary"
+            disabled={!name || !email || !password || loading}
+          >
+            {loading ? <SyncOutlined spin /> : "Submit"}
+          </button>
+        </form>
+          </TabPane>
+        </Tabs>
+        
 
         <p className="text-center p-3">
           Already registered?{" "}

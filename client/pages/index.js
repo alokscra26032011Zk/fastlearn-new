@@ -1,12 +1,9 @@
 import { withRouter } from "next/router";
 import axios from "axios";
-import CourseCard from "../components/cards/CourseCard";
 import Head from "next/head";
-import TutorAtnBtn from "../components/Tutor/TutorAtnBtn";
-import TutorCta from "../components/Tutor/TutorCta";
 import styles from "../styles/Overview.module.css";
-import { Col, Row, Space, Table } from "antd";
-import { columns, data } from "../context/dummy";
+import TutorDashboard from "../components/Tutor/TutorDashboard";
+import StudentDashboard from "../components/Student/StudentDashboard";
 
 const Index = ({ courses, router }) => {
   const head = () => (
@@ -40,37 +37,11 @@ const Index = ({ courses, router }) => {
       {head()}
       <div className="container">
         <div className={styles.overviewPage}>
-          <TutorAtnBtn></TutorAtnBtn>
-          <TutorCta></TutorCta>
-          <Row gutter={12} className="mt-4">
-            <Col span={8}>
-              {" "}
-              <h3 className="mb-4">Sample Table</h3>
-              <Table columns={columns} dataSource={data} />
-            </Col>
-            <Col span={16}>
-              {" "}
-              <h3 className="mb-4">Sample Table</h3>
-              <Table columns={columns} dataSource={data} />
-            </Col>
-          </Row>
+          <TutorDashboard courses={courses}></TutorDashboard>
+          <StudentDashboard courses={courses}></StudentDashboard>
         </div>
       </div>
-      <div className="jumbotron text-center bg-primary square">
-        <h1>FastLearn</h1>
-        <hr style={{ borderBottom: "2px solid silver", width: "100px" }} />
-        <p className="lead">Courses</p>
-      </div>
-      <div className="container-fluid">
-        <div className="row pt-2">
-          {courses.map((course) => (
-            <div key={course._id} className="col-md-4">
-              <CourseCard key={course._id} course={course} />
-              {/* <pre>{JSON.stringify(course, null, 4)}</pre> */}
-            </div>
-          ))}
-        </div>
-      </div>
+      <div className="container-fluid"></div>
     </>
   );
 };

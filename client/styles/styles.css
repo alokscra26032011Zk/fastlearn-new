@@ -78,6 +78,15 @@ input[type="text"] {
   border-radius: 5px;
 }
 
+.studentCta {
+  box-shadow: 4px 4px 13px -0px #00000027;
+  height: 15vh;
+}
+.studentsLogo {
+  margin-top: -7.5vh;
+  height: 22vh;
+  width: 25vw;
+}
 svg {
   margin-top: -6px;
 }

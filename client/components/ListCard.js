@@ -1,9 +1,9 @@
-import { DoubleRightOutlined } from "@ant-design/icons";
-import { Col, Row, Space } from "antd";
 import React from "react";
 import styles from "../styles/Common.module.css";
 import Link from "next/link";
 import { Avatar, Badge } from "antd";
+import { DoubleRightOutlined } from "@ant-design/icons";
+import { Col, Row, Space } from "antd";
 import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 function ListCard({ course }) {

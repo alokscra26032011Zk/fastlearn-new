@@ -30,10 +30,10 @@ const UserRoute = ({ children, showNav = true }) => {
       className="d-flex justify-content-center display-1 text-primary p-5"
     />
   ) : (
-    <div className="container-fluid">
+    <div className="container">
       <div className="row">
-        <div className="col-md-2">{showNav && <UserNav />}</div>
-        <div className="col-md-10">{children}</div>
+        {/* <div className="col-md-0">{showNav && <UserNav />}</div> */}
+        <div className="col-md-12">{children}</div>
       </div>
     </div>
   );

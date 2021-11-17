@@ -21,6 +21,7 @@ import { toast } from "react-toastify";
 import { Context } from "../../../context";
 import { useWindowWidth } from "@react-hook/window-size";
 import CodeBlock from "../../../components/marked/CodeBlock";
+import ReactMarkdown from "react-markdown";
 
 const { Item } = Menu;
 
@@ -424,12 +425,12 @@ const SingleCourse = () => {
                     </>
                   )}
 
-                {/* <ReactMarkdown
+                <ReactMarkdown
                   source={course.lessons[clicked].content}
                   renderers={{ code: CodeBlock }}
                   className="single-post"
-                /> */}
-
+                />
+                {course.lessons[clicked].content}
                 {/* qa */}
                 <br />
                 {clicked !== -1 && (

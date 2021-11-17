@@ -29,7 +29,7 @@ const StudentRoute = ({ children, showNav = true }) => {
       className="d-flex justify-content-center display-1 text-primary p-5"
     />
   ) : (
-    <div className="container-fluid">{children}</div>
+    <div className="container mt-3">{children}</div>
   );
 };
 

@@ -6,11 +6,11 @@ function StudentCta() {
     <div>
       <Row justify="end">
         <Space>
-          {/* <Button href="/assignments/create" type="primary">
-          Add Test Series
-        </Button>{" "} */}
           <Button href="/user/" type="primary">
             Explore Courses
+          </Button>{" "}
+          <Button href="/user/" type="primary">
+            My Courses
           </Button>{" "}
         </Space>
       </Row>

@@ -6,6 +6,8 @@ import TutorDashboard from "../components/Tutor/TutorDashboard";
 import StudentDashboard from "../components/Student/StudentDashboard";
 import CommonDashboard from "../components/CommonDashboard";
 import Footer from "../components/Footer";
+import { useContext, useEffect } from "react";
+import { Context } from "../context";
 
 const Index = ({ courses, router }) => {
   const head = () => (
@@ -34,14 +36,24 @@ const Index = ({ courses, router }) => {
     </Head>
   );
 
+  const { state, dispatch } = useContext(Context);
+  const { user } = state;
+  const userType = user;
+
   return (
     <>
       {head()}
       <div className="container">
         <div className={styles.overviewPage}>
-          <CommonDashboard courses={courses}></CommonDashboard>
-          <TutorDashboard courses={courses}></TutorDashboard>
-          <StudentDashboard courses={courses}></StudentDashboard>
+          {user !== null && userType["role"][0] === "Instructor" && (
+            <TutorDashboard courses={courses}></TutorDashboard>
+          )}
+          {user !== null && userType["role"][0] === "Subscriber" && (
+            <StudentDashboard courses={courses}></StudentDashboard>
+          )}
+          {user === null && (
+            <CommonDashboard courses={courses}></CommonDashboard>
+          )}
         </div>
       </div>
     </>

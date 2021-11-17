@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Overview.module.css";
 import TutorDashboard from "../components/Tutor/TutorDashboard";
 import StudentDashboard from "../components/Student/StudentDashboard";
+import CommonDashboard from "../components/CommonDashboard";
 
 const Index = ({ courses, router }) => {
   const head = () => (
@@ -37,6 +38,7 @@ const Index = ({ courses, router }) => {
       {head()}
       <div className="container">
         <div className={styles.overviewPage}>
+          <CommonDashboard courses={courses}></CommonDashboard>
           <TutorDashboard courses={courses}></TutorDashboard>
           <StudentDashboard courses={courses}></StudentDashboard>
         </div>

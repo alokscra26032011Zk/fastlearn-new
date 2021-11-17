@@ -78,6 +78,10 @@ input[type="text"] {
   border-radius: 5px;
 }
 
+.shadow {
+  box-shadow: 4px 4px 13px -0px #00000027;
+}
+
 .studentCta {
   box-shadow: 4px 4px 13px -0px #00000027;
   height: 15vh;
@@ -126,4 +130,21 @@ svg {
 .lessons {
   cursor: grab !important;
   text-decoration: underline;
+}
+.heroSection {
+  padding-bottom: 60vh;
+}
+.heroSection h1 {
+  font-size: 5rem !important;
+  font-weight: bold !important  ;
+  margin-bottom: 2rem !important;
+}
+
+.heroSection h2 {
+  font-size: 3rem !important;
+  font-weight: bold !important  ;
+}
+
+.heroSection h3 {
+  width: 60%;
 }

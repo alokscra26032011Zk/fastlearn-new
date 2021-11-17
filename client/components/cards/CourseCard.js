@@ -13,6 +13,7 @@ const CourseCard = ({ course }) => {
   const { name, instructor, price, image, slug, paid, categories } = course;
   return (
     <Link href="/course/[slug]" as={`/course/${slug}`}>
+      {/* instructor/course/view/ */}
       <a>
         <Col>
           <Row className={styles.CourseCard} justify="space-between">

@@ -39,11 +39,11 @@ const SingleCourseJumbotron = ({
   } = useContext(Context);
 
   return (
-    <div className="jumbotron bg-primary square">
-      <div className="row">
+    <div className="wrapper shadow container ">
+      <div className="row p-3">
         <div className="col-md-8">
           {/* title */}
-          <h1 className="text-light font-weight-bold">{name}</h1>
+          <h1 className="font-weight-bold">{name}</h1>
           {/* description */}
           <p className="lead">
             {description && description.substring(0, 160)}..
@@ -127,11 +127,12 @@ const SingleCourseJumbotron = ({
 
           <Button
             className="mb-3"
-            type="danger"
+            type="primary"
             block
             shape="round"
             icon={<SafetyOutlined />}
             size="large"
+            className="btnGrad"
             disabled={loading}
             onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
             // style={{ width: "342px" }}

@@ -6,17 +6,18 @@ import { DoubleRightOutlined } from "@ant-design/icons";
 import { Col, Row, Space } from "antd";
 import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
-function ListCard({ course }) {
+function ListCard({ course, withImage }) {
   return (
     <Col span={6}>
       <Row className={styles.ListCard}>
         <Space direction="vertical">
+          <Avatar
+            size={230}
+            shape="square"
+            src={course.image ? course.image.Location : "/course.png"}
+          />
           <div className="media-body pl-2">
             <div className="row">
-              {/* <Avatar
-                size={80}
-                src={course.image ? course.image.Location : "/course.png"}
-              /> */}
               <div className="col">
                 <Badge count={course.paid ? course.price : "Free"}>
                   <Link

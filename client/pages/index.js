@@ -5,6 +5,7 @@ import styles from "../styles/Overview.module.css";
 import TutorDashboard from "../components/Tutor/TutorDashboard";
 import StudentDashboard from "../components/Student/StudentDashboard";
 import CommonDashboard from "../components/CommonDashboard";
+import Footer from "../components/Footer";
 
 const Index = ({ courses, router }) => {
   const head = () => (
@@ -41,9 +42,9 @@ const Index = ({ courses, router }) => {
           <CommonDashboard courses={courses}></CommonDashboard>
           <TutorDashboard courses={courses}></TutorDashboard>
           <StudentDashboard courses={courses}></StudentDashboard>
+          <Footer></Footer>
         </div>
       </div>
-      <div className="container-fluid"></div>
     </>
   );
 };

@@ -127,6 +127,11 @@ svg {
   background-color: #f5ff9e !important;
 }
 
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .lessons {
   cursor: grab !important;
   text-decoration: underline;

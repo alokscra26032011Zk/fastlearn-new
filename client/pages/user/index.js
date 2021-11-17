@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import UserRoute from "../../components/routes/UserRoute";
 import axios from "axios";
-import { Avatar, Button, Row } from "antd";
+import { Button, Row } from "antd";
 import Link from "next/link";
-import {
-  SyncOutlined,
-  PlayCircleFilled,
-  PlayCircleOutlined,
-} from "@ant-design/icons";
+import { SyncOutlined } from "@ant-design/icons";
 import CourseCard from "../../components/cards/CourseCard";
 
 const UserIndex = () => {

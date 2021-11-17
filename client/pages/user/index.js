@@ -45,7 +45,11 @@ const UserIndex = () => {
       {courses &&
         courses.map((course) => (
           <div key={course._id} className="col-md-12">
-            <CourseCard key={course._id} course={course} />
+            <CourseCard
+              key={course._id}
+              course={course}
+              slug={`/course/${course.slug}`}
+            />
           </div>
         ))}
     </UserRoute>

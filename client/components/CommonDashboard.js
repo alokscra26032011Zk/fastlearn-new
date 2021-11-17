@@ -25,7 +25,10 @@ function CommonDashboard({ courses }) {
         <h2 className="text-center mt-5 mb-3">Our courses</h2>
       </Row>
       <Row justify="start">
-        {courses && courses.map((course) => <ListCard course={course} />)}
+        {courses &&
+          courses.map((course) => (
+            <ListCard course={course} slug={`/course/${course.slug}`} />
+          ))}
       </Row>
     </div>
   );

@@ -8,12 +8,11 @@ import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 const { Meta } = Card;
 
-const CourseCard = ({ course }) => {
+const CourseCard = ({ course, slug }) => {
   // destructure
-  const { name, instructor, price, image, slug, paid, categories } = course;
+  // const { name, instructor, price, image, slug, paid, categories } = course;
   return (
-    <Link href="/course/[slug]" as={`/course/${slug}`}>
-      {/* instructor/course/view/ */}
+    <Link href="/course/[slug]" as={slug}>
       <a>
         <Col>
           <Row className={styles.CourseCard} justify="space-between">
@@ -26,10 +25,7 @@ const CourseCard = ({ course }) => {
               /> */}
                   <div className="col">
                     <Badge count={course.paid ? course.price : "Free"}>
-                      <Link
-                        href={`/instructor/course/view/${course.slug}`}
-                        className="pointer"
-                      >
+                      <Link href={slug} className="pointer">
                         <a>
                           <h5 className="my-2 text-primary">{course.name}</h5>
                         </a>
@@ -83,7 +79,7 @@ const CourseCard = ({ course }) => {
                   </div>
                 )}
               </div>
-              <Link href={`/instructor/course/view/${course.slug}`}>
+              <Link href={slug}>
                 <Row justify="end" className="pointer">
                   <DoubleRightOutlined className={styles.btnNext} />
                 </Row>

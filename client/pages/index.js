@@ -42,7 +42,6 @@ const Index = ({ courses, router }) => {
           <CommonDashboard courses={courses}></CommonDashboard>
           <TutorDashboard courses={courses}></TutorDashboard>
           <StudentDashboard courses={courses}></StudentDashboard>
-          <Footer></Footer>
         </div>
       </div>
     </>

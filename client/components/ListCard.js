@@ -6,7 +6,7 @@ import { DoubleRightOutlined } from "@ant-design/icons";
 import { Col, Row, Space } from "antd";
 import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
-function ListCard({ course, withImage }) {
+function ListCard({ course, withImage, slug }) {
   return (
     <Col span={6}>
       <Row className={styles.ListCard}>
@@ -20,10 +20,7 @@ function ListCard({ course, withImage }) {
             <div className="row">
               <div className="col">
                 <Badge count={course.paid ? course.price : "Free"}>
-                  <Link
-                    href={`/instructor/course/view/${course.slug}`}
-                    className="pointer"
-                  >
+                  <Link href={slug} className="pointer">
                     <a>
                       <h5 className="mt-2 text-primary">{course.name}</h5>
                     </a>
@@ -73,7 +70,7 @@ function ListCard({ course, withImage }) {
               </div>
             </div>
           </div>
-          <Link href={`/instructor/course/view/${course.slug}`}>
+          <Link href={slug}>
             <Row justify="end" className="pointer">
               <DoubleRightOutlined className={styles.btnNext} />
             </Row>

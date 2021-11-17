@@ -20,7 +20,11 @@ function StudentDashboard({ courses }) {
           <div className="row pt-2">
             {courses.map((course) => (
               <div key={course._id} className="col-md-12">
-                <CourseCard key={course._id} course={course} />
+                <CourseCard
+                  key={course._id}
+                  course={course}
+                  slug={`/course/${course.slug}`}
+                />
               </div>
             ))}
           </div>

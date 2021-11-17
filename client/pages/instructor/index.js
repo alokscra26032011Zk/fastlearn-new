@@ -31,7 +31,13 @@ const InstructorIndex = () => {
         </Link>
       )}
       <Row justify="start">
-        {courses && courses.map((course) => <ListCard course={course} />)}
+        {courses &&
+          courses.map((course) => (
+            <ListCard
+              course={course}
+              slug={`/instructor/course/view/${course.slug}`}
+            />
+          ))}
       </Row>
     </InstructorRoute>
   );

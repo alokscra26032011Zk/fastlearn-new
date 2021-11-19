@@ -380,7 +380,7 @@ const SingleCourse = () => {
         </div>
         {/* right content area */}
         <div
-          className="col contentArea pt-2"
+          className="col  pt-2"
           // style={{
           //   height: "100vh",
           //   overflow: "scroll",
@@ -424,13 +424,14 @@ const SingleCourse = () => {
                       <hr />
                     </>
                   )}
-
-                <ReactMarkdown
+                <span className="contentArea shadow">
+                  {/* <ReactMarkdown
                   source={course.lessons[clicked].content}
                   renderers={{ code: CodeBlock }}
                   className="single-post"
-                />
-                {course.lessons[clicked].content}
+                  /> */}
+                  {course.lessons[clicked].content}
+                </span>
                 {/* qa */}
                 <br />
 

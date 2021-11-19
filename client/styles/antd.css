@@ -26,6 +26,8 @@
 }
 .contentArea {
   margin: 1rem 3rem;
+  padding: 2rem;
+  background-color: #fff;
 }
 
 .w60 {

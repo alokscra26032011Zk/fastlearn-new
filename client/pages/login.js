@@ -44,7 +44,7 @@ const Login = () => {
       });
       // save in local storage
       window.localStorage.setItem("user", JSON.stringify(data));
-      router.push("/user");
+      router.push("/");
     } catch (err) {
       // toast(err.response.data);
       setLoading(false);

@@ -6,7 +6,7 @@ function StudentCta() {
     <div>
       <Row justify="end">
         <Space>
-          <Button href="/user/" type="primary">
+          <Button href="/user/course/" type="primary">
             Explore Courses
           </Button>{" "}
           <Button href="/user/" type="primary">

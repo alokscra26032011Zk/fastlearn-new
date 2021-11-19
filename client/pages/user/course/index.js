@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { Row } from "antd";
 import ListCard from "../../../components/ListCard";
-import InstructorRoute from "../../../components/routes/InstructorRoute";
 
 const StudentIndex = ({ courses, router }) => {
   return (

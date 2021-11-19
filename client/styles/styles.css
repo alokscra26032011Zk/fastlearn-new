@@ -128,8 +128,8 @@ svg {
 }
 
 section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
 
 .lessons {
@@ -137,7 +137,7 @@ section {
   text-decoration: underline;
 }
 .heroSection {
-  padding-bottom: 60vh;
+  /* padding-bottom: 60vh; */
 }
 .heroSection h1 {
   font-size: 5rem !important;
@@ -152,4 +152,8 @@ section {
 
 .heroSection h3 {
   width: 60%;
+}
+
+.footer {
+  margin-top: 20vh !important;
 }

@@ -1,11 +1,11 @@
 import React from "react";
 
-function Footer() {
+function Footer({ children }) {
   return (
     <div>
-      <section>
+      <section className="mt-5 pt-5 footer">
+        {children}
         <div class="container">
-          <h2>Features</h2>
           <p class="text-muted mb-5">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form.

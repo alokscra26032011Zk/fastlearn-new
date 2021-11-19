@@ -3,9 +3,17 @@
   margin-bottom: -0.3rem !important;
 }
 
+.ant-menu-item {
+  /* height: 3.5rem !important; */
+}
+
 .ant-menu-item-selected,
 .ant-menu-item-active {
-  border-bottom: 3px solid #1890ff !important;
+  /* border-bottom: 3px solid #1890ff !important;
+  height: 3.5rem !important; */
+}
+.ant-menu-item::after {
+  /* border-right: 0px !important; */
 }
 
 .ant-tabs,
@@ -16,7 +24,17 @@
 .ant-btn {
   border-radius: 5px;
 }
+.contentArea {
+  margin: 1rem 3rem;
+}
 
+.w60 {
+  width: 60% !important;
+}
+
+.text-small {
+  font-size: 12px;
+}
 .ant-tabs-tab {
   border: 0px solid #0f75bc !important;
   background-color: #c0e0ff75 !important;

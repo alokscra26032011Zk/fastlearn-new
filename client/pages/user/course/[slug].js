@@ -380,7 +380,7 @@ const SingleCourse = () => {
         </div>
         {/* right content area */}
         <div
-          className="col pt-2"
+          className="col contentArea pt-2"
           // style={{
           //   height: "100vh",
           //   overflow: "scroll",
@@ -433,25 +433,7 @@ const SingleCourse = () => {
                 {course.lessons[clicked].content}
                 {/* qa */}
                 <br />
-                {clicked !== -1 && (
-                  <QaCreateRead
-                    visible={visible}
-                    setVisible={setVisible}
-                    values={values}
-                    setValues={setValues}
-                    handleCreatePost={handleCreatePost}
-                    clickedLessonQa={clickedLessonQa}
-                    handleQaDelete={handleQaDelete}
-                    handleQaEdit={handleQaEdit}
-                    handleAddAnswer={handleAddAnswer}
-                    handleEditAnswer={handleEditAnswer}
-                    handleDeleteAnswer={handleDeleteAnswer}
-                    markdownCheetsheetModal={markdownCheetsheetModal}
-                    setMarkdownCheetsheetModal={setMarkdownCheetsheetModal}
-                    markQaAsResolved={markQaAsResolved}
-                    markQaAsNotResolved={markQaAsNotResolved}
-                  />
-                )}
+
                 {/* edit in modal view */}
                 <QaEdit
                   editModalVisible={editModalVisible}
@@ -488,6 +470,25 @@ const SingleCourse = () => {
                   markdownCheetsheetModal={markdownCheetsheetModal}
                   setMarkdownCheetsheetModal={setMarkdownCheetsheetModal}
                 />
+                {clicked !== -1 && (
+                  <QaCreateRead
+                    visible={visible}
+                    setVisible={setVisible}
+                    values={values}
+                    setValues={setValues}
+                    handleCreatePost={handleCreatePost}
+                    clickedLessonQa={clickedLessonQa}
+                    handleQaDelete={handleQaDelete}
+                    handleQaEdit={handleQaEdit}
+                    handleAddAnswer={handleAddAnswer}
+                    handleEditAnswer={handleEditAnswer}
+                    handleDeleteAnswer={handleDeleteAnswer}
+                    markdownCheetsheetModal={markdownCheetsheetModal}
+                    setMarkdownCheetsheetModal={setMarkdownCheetsheetModal}
+                    markQaAsResolved={markQaAsResolved}
+                    markQaAsNotResolved={markQaAsNotResolved}
+                  />
+                )}
               </div>
               <br />
             </>

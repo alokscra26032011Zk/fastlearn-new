@@ -45,9 +45,11 @@ const Index = ({ courses, router }) => {
       {head()}
       <div className="container">
         <div className={styles.overviewPage}>
-          {user !== null && userType["role"][0] === "Instructor" && (
-            <TutorDashboard courses={courses}></TutorDashboard>
-          )}
+          {user !== null &&
+            userType["role"][1] === "Instructor" &&
+            userType["role"][0] === "Subscriber" && (
+              <TutorDashboard courses={courses}></TutorDashboard>
+            )}
           {user !== null && userType["role"][0] === "Subscriber" && (
             <StudentDashboard courses={courses}></StudentDashboard>
           )}

@@ -24,6 +24,10 @@ const Register = () => {
   }, [user]);
 
   const { TabPane } = Tabs;
+
+  const loginUser = async (e) => {
+    router.push("/login");
+  };
   const handleSubmitInstructor = async (e) => {
     e.preventDefault();
     // console.table({ name, email, password });
@@ -35,6 +39,7 @@ const Register = () => {
         password,
       });
       // console.log("REGISTER RESPONSE", data);
+      loginUser();
       toast("Registration successful. Please login.");
       setName("");
       setEmail("");
@@ -55,6 +60,7 @@ const Register = () => {
         email,
         password,
       });
+      loginUser();
       // console.log("REGISTER RESPONSE", data);
       toast("Registration successful. Please login.");
       setName("");

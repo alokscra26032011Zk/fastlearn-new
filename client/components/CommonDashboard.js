@@ -1,6 +1,8 @@
 import { Col, Image, Row } from "antd";
 import React from "react";
+import Footer from "./Footer";
 import ListCard from "./ListCard";
+import CourseCard from "../components/cards/CourseCard";
 
 function CommonDashboard({ courses }) {
   return (
@@ -30,6 +32,23 @@ function CommonDashboard({ courses }) {
             <ListCard course={course} slug={`/course/${course.slug}`} />
           ))}
       </Row>
+
+      <Row justify="center">
+        <h2 className="text-center mt-5 pt-3 mb-5">Feature courses</h2>
+      </Row>
+
+      {courses &&
+        courses.map((course) => (
+          <CourseCard course={course} slug={`/course/${course.slug}`} />
+        ))}
+      <Footer>
+        <Image
+          className="logo ml-3 p-2 pointer"
+          preview={false}
+          width={300}
+          src="https://cdn.discordapp.com/attachments/820608670810243133/903002139293523968/unknown.png"
+        />
+      </Footer>
     </div>
   );
 }

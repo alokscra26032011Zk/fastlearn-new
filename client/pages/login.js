@@ -11,9 +11,9 @@ const Login = () => {
   const [email, setEmail] = useState("alok.node@gmail.com");
   const [password, setPassword] = useState("rrrrrr");
   const [loading, setLoading] = useState(false);
-  
-   // state
-   const {
+
+  // state
+  const {
     state: { user },
     dispatch,
   } = useContext(Context);
@@ -44,7 +44,7 @@ const Login = () => {
       });
       // save in local storage
       window.localStorage.setItem("user", JSON.stringify(data));
-      router.push("/user");
+      router.push("/");
     } catch (err) {
       // toast(err.response.data);
       setLoading(false);
@@ -54,55 +54,56 @@ const Login = () => {
   return (
     <>
       <Row justify="center" align="middle" className="singleForm">
-        <Col span="7" >
-        <Tabs defaultActiveKey="1" type="card" size="large" className="mb-4" centered>
+        <Col span="7">
+          {/* <Tabs defaultActiveKey="1" type="card" size="large" className="mb-4" centered>
           <TabPane tab="Student Login" key="1">
           </TabPane>
           <TabPane tab="Tutor Login" key="2">
           </TabPane>
-        </Tabs>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="">Email</label>
-          <input
-            type="email"
-            className="form-control mb-4 p-4"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email"
-            required
-          />
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            className="form-control mb-4 p-4"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter password"
-            required
-          />
+        </Tabs> */}
+          <h1 className="text-center mb-2 font-weight-bold">Login Here !</h1>
+          <p className="text-center mb-5">Welcome to FastLearn</p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="">Email</label>
+            <input
+              type="email"
+              className="form-control mb-4 p-4"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter email"
+              required
+            />
+            <label htmlFor="">Password</label>
+            <input
+              type="password"
+              className="form-control mb-4 p-4"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+              required
+            />
 
-          <button
-            type="submit"
-            className="btn btnGrad btn-block btn-primary"
-            disabled={!email || !password || loading}
-          >
-            {loading ? <SyncOutlined spin /> : "Submit"}
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="btn btnGrad btn-block btn-primary"
+              disabled={!email || !password || loading}
+            >
+              {loading ? <SyncOutlined spin /> : "Submit"}
+            </button>
+          </form>
 
-        <p className="text-center p-3">
-          Not yet registered?{" "}
-          <Link href="/register">
-            <a>Register</a>
-          </Link>
-        </p>
+          <p className="text-center p-3">
+            Not yet registered?{" "}
+            <Link href="/register">
+              <a>Register</a>
+            </Link>
+          </p>
 
-        {/* <p className="text-center">
+          {/* <p className="text-center">
           <Link href="/forgot-password">
             <a className="text-danger">Forgot password</a>
           </Link>
         </p> */}
-
         </Col>
       </Row>
     </>

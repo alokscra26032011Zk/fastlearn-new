@@ -6,7 +6,7 @@ import { DoubleRightOutlined } from "@ant-design/icons";
 import { Col, Row, Space } from "antd";
 import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
-function ListCard({ course, withImage, slug }) {
+function ListCard({ course, withImage, slug, isPublic }) {
   return (
     <Col span={6}>
       <Row className={styles.ListCard}>
@@ -29,28 +29,29 @@ function ListCard({ course, withImage, slug }) {
                 <p style={{ marginTop: "-10px" }}>
                   {course.lessons.length} Lessons
                 </p>
-
-                {course.lessons.length < 5 ? (
+                {isPublic !== "true" && course.lessons.length < 5 ? (
                   <p
                     style={{ marginTop: "-15px", fontSize: "10px" }}
                     className="text-danger"
                   >
                     5 lessons are required to publish
                   </p>
-                ) : course.published ? (
+                ) : isPublic !== "true" && course.published ? (
                   <p
                     style={{ marginTop: "-15px", fontSize: "10px" }}
                     className="text-success"
                   >
                     Your course is live in the marketplace
                   </p>
-                ) : (
+                ) : isPublic !== "true" ? (
                   <p
                     style={{ marginTop: "-15px", fontSize: "10px" }}
                     className="text-success"
                   >
                     Your course is ready to be published
                   </p>
+                ) : (
+                  <p></p>
                 )}
               </div>
               <div className="mt-3 float-right pr-4 text-center">

@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import ListCard from "./ListCard";
 import CourseCard from "../components/cards/CourseCard";
 
-function CommonDashboard({ courses }) {
+function CommonDashboard({ courses, isPublic }) {
   return (
     <div className="container heroSection">
       <Row justify="space-between" align="middle">
@@ -29,7 +29,11 @@ function CommonDashboard({ courses }) {
       <Row justify="start">
         {courses &&
           courses.map((course) => (
-            <ListCard course={course} slug={`/course/${course.slug}`} />
+            <ListCard
+              isPublic="true"
+              course={course}
+              slug={`/course/${course.slug}`}
+            />
           ))}
       </Row>
 

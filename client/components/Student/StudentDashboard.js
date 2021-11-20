@@ -9,12 +9,12 @@ function StudentDashboard({ courses }) {
     <div>
       <StudentCta></StudentCta>
       <Row gutter={24} className="mt-4">
-        <Col span={8}>
+        {/* <Col span={8}>
           {" "}
           <h3 className="mb-4">Recent students</h3>
           <Table columns={columns} dataSource={data} />
-        </Col>
-        <Col span={16}>
+        </Col> */}
+        <Col span={24}>
           {" "}
           <h3 className="mb-4">In progress Courses</h3>
           <div className="row pt-2">

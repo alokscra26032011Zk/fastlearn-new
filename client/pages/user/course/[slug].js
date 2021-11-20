@@ -416,8 +416,8 @@ const SingleCourse = () => {
                           // playing
                           // light="/images/default/player.png"
                           url={course.lessons[clicked].video.Location}
-                          width="100%"
-                          height="100%"
+                          width="50%"
+                          height="10%"
                           controls
                         />
                       </div>

@@ -42,7 +42,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   const handleAddLesson = async (e) => {
     e.preventDefault();
     // console.log("**SEND TO BACKEND**", course);
-    // console.table({ values });
+    console.table({ values });
     let { data } = await axios.post(`/api/course/lesson/${course._id}`, values);
     console.log("LESSON ADDED AND SAVED ===> ", data);
     setValues({ ...values, title: "", content: "", video: {} });

@@ -11,11 +11,11 @@ function ListCard({ course, withImage, slug, isPublic }) {
     <Col span={6}>
       <Row className={styles.ListCard}>
         <Space direction="vertical">
-          {/* <Avatar
+          <Avatar
             size={230}
             shape="square"
-            src={course.image ? course.image.Location : "/course.png"}
-          /> */}
+            src={course.image && course.image ? course.image.Location : "/course.png"}
+          />
           <div className="media-body pl-2">
             <div className="row">
               <div className="col">

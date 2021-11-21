@@ -8,8 +8,8 @@ import { Context } from "../context";
 import { Col, Row, Tabs } from "antd";
 
 const Login = () => {
-  const [email, setEmail] = useState("alok.node@gmail.com");
-  const [password, setPassword] = useState("rrrrrr");
+  const [email, setEmail] = useState("teststudent@gmail.com");
+  const [password, setPassword] = useState("teststudent");
   const [loading, setLoading] = useState(false);
 
   // state
@@ -62,7 +62,9 @@ const Login = () => {
           </TabPane>
         </Tabs> */}
           <h1 className="text-center mb-2 font-weight-bold">Login Here !</h1>
-          <p className="text-center mb-5">Welcome to FastLearn</p>
+          <p className="text-center mb-5">
+            Instructor login - testinstructor@gmail.com : testinstructor
+          </p>
           <form onSubmit={handleSubmit}>
             <label htmlFor="">Email</label>
             <input

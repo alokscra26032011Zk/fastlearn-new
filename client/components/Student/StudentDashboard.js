@@ -1,8 +1,9 @@
 import React from "react";
-import { Col, Row, Space, Table } from "antd";
+import { Col, Image, Row, Space, Table } from "antd";
 import { columns, data } from "../../context/dummy";
 import StudentCta from "./StudentCta";
 import CourseCard from "../cards/CourseCard";
+import Footer from "../Footer";
 
 function StudentDashboard({ courses }) {
   return (
@@ -30,6 +31,14 @@ function StudentDashboard({ courses }) {
           </div>
         </Col>
       </Row>
+      <Footer>
+        <Image
+          className="logo ml-3 p-2 pointer"
+          preview={false}
+          width={300}
+          src="https://cdn.discordapp.com/attachments/820608670810243133/903002139293523968/unknown.png"
+        />
+      </Footer>
     </div>
   );
 }

@@ -8,21 +8,26 @@ import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 function ListCard({ course, withImage, slug, isPublic }) {
   return (
-    <Col span={6}>
+    <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 6 }}>
       <Row className={styles.ListCard}>
         <Space direction="vertical">
           <Avatar
-            size={230}
             shape="square"
-            src={course.image && course.image ? course.image.Location : "/course.png"}
+            src={
+              course.image && course.image
+                ? course.image.Location
+                : "https://cdn.discordapp.com/attachments/820608670810243133/913059106061946930/orionthemes-placeholder-image.png"
+            }
           />
           <div className="media-body pl-2">
             <div className="row">
-              <div className="col">
+              <div className="col-8">
                 <Badge count={course.paid ? course.price : "Free"}>
                   <Link href={slug} className="pointer">
                     <a>
-                      <h5 className="mt-2 text-primary">{course.name}</h5>
+                      <h5 className="mt-2 text-primary courseName">
+                        {course.name}
+                      </h5>
                     </a>
                   </Link>
                 </Badge>
@@ -54,7 +59,7 @@ function ListCard({ course, withImage, slug, isPublic }) {
                   <p></p>
                 )}
               </div>
-              <div className="mt-3 float-right pr-4 text-center">
+              <div className="mt-3 col-4 float-right pr-4 text-center">
                 {course.published ? (
                   <div>
                     <CheckCircleOutlined className="h5 pointer text-success" />

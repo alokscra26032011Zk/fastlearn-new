@@ -54,6 +54,7 @@ h5 {
 
 .singleForm {
   height: 80vh;
+  margin: 0 1rem;
 }
 
 select,
@@ -156,4 +157,25 @@ section {
 
 .footer {
   margin-top: 20vh !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .heroSection {
+    margin-top: 10vh;
+    margin-bottom: 10vh !important;
+  }
+  .heroSection h1 {
+    font-size: 3rem !important;
+  }
+
+  .heroSection h2 {
+    font-size: 2rem !important;
+  }
+
+  .heroSection h3 {
+    width: 100%;
+  }
 }

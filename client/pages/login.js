@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <>
       <Row justify="center" align="middle" className="singleForm">
-        <Col span="7">
+        <Col md={{ span: 20 }} lg={{ span: 7 }}>
           {/* <Tabs defaultActiveKey="1" type="card" size="large" className="mb-4" centered>
           <TabPane tab="Student Login" key="1">
           </TabPane>

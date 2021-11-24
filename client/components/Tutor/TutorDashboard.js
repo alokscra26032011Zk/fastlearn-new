@@ -1,9 +1,10 @@
 import React from "react";
-import { Col, Row, Space, Table } from "antd";
+import { Col, Image, Row, Space, Table } from "antd";
 import { columns, data } from "../../context/dummy";
 import CourseCard from "../../components/cards/CourseCard";
 import TutorAtnBtn from "./TutorAtnBtn";
 import TutorCta from "./TutorCta";
+import Footer from "../Footer";
 
 function TutorDashboard({ courses }) {
   return (
@@ -32,6 +33,14 @@ function TutorDashboard({ courses }) {
           </div>
         </Col>
       </Row>
+      <Footer>
+        <Image
+          className="logo ml-3 p-2 pointer"
+          preview={false}
+          width={300}
+          src="https://cdn.discordapp.com/attachments/820608670810243133/903002139293523968/unknown.png"
+        />
+      </Footer>
     </div>
   );
 }
